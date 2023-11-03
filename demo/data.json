@@ -1,0 +1,23 @@
+[
+  {
+    "name":"John Doe",
+    "age":30,
+    "website": "https://example.org"
+    "email": "a@b.c"
+  },
+  {
+    "name":"Jane Doe",
+    "age":25,
+    "website": "https://example.com"
+  },
+  {
+      "name":"John Smith",
+      "age":40,
+      "website": "https://.com"
+  },
+    {
+        "name":"Jane Smith",
+        "age":35,
+        "website": false
+    }
+]

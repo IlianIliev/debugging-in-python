@@ -1,0 +1,15 @@
+<h2>Are you sure you want to delete the following user?</h2>
+
+<p>
+    <strong>Username</strong>: {{ user.username }}
+</p>
+<p>
+    <strong>Settings</strong>: {{ user.settings }}
+</p>
+<p>&nbsp;</p>
+
+<form method="POST">
+    {% csrf_token %}
+    <a href="/accounts">Cancel</a>
+    <input type="submit" name="delete" value="Delete">
+</form>

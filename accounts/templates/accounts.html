@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <a href="create">Create new account</a>
+    <h1>Existing accounts</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Settings</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.username }}</td>
+                <td>{{ user.settings }}</td>
+                <td><a href="delete/{{ user.id }}">Delete</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+

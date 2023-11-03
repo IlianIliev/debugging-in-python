@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Welcome developer</h1>
+
+    {% if request.session.started == 'True' %}
+        <p>We at <strong>Not So Stable Software Inc.</strong> need your help!</p>
+
+        <p>
+            You may have noticed that our system has some minor issues. <br />
+            All other developers have abandoned the project, so you are our only hope.
+        </p>
+        <p>
+            We have a list of issues that need to be fixed before the deadline, which as you can guess was three weeks ago. <br />
+            We believe that you skills and experience will help us to get back on track.
+        </p>
+
+        <p>So, here is a what our users and staff reported</p>
+
+        <ul>
+            <li>The accounts section disappeared from the menu</li>
+            <li>Deleting users works too well</li>
+            <li>New accounts sometimes ends with a weird profile header message</li>
+            <li>And subscribing for the newsletter does not work</li>
+            <li>Creating contacts works partially and often goes out of sync.</li>
+        </ul>
+
+        <p>
+            Solving all issues not only grants you the <strong>Bug Solver: Level Awesome</strong> title
+            but also our eternal gratitude.
+        </p>
+
+        <p>
+            Something went wrong? You can always <a href="{% url 'start-over' %}">start over</a>
+        </p>
+    {% else %}
+        <h2>
+            Your journey into debugging starts <a href="{% url 'start' %}">here</a>
+        </h2>
+    {% endif %}
+
+
+{% endblock %}
