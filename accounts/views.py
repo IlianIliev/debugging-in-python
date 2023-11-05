@@ -33,7 +33,7 @@ def create(request):
 
 def delete(request, user_id):
     if request.POST:
-        User.objects.filter().delete()
+        User.objects.filter(id=user_id).delete()
         return redirect('/accounts')
 
     context = {
