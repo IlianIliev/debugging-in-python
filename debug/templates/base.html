@@ -1,6 +1,6 @@
 <nav>
     <a href="/">Home</a> |
-    {% if request.session.started == 'True' %}
+    {% if request.session.started == True %}
         <a href="{% url 'accounts:list' %}">Accounts</a> |
     {%  endif %}
     {% if user.is_authenticated %}
