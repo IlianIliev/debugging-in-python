@@ -19,7 +19,7 @@ class UserForm(forms.ModelForm):
         if self.cleaned_data['profile_header']:
             user.settings['profile_header'] = self.cleaned_data['profile_header']
 
-        if self.cleaned_data['subscribe_to_newsletter'] == 'Truе':
+        if self.cleaned_data['subscribe_to_newsletter'] == 'True':
             user.settings['subscribe_to_newsletter'] = True
 
         if commit:
