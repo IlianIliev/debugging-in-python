@@ -11,12 +11,12 @@ DEFAULT_SETTINGS = {
 
 
 class User(AbstractUser):
-    settings = JSONField(default=DEFAULT_SETTINGS)
+    settings = JSONField(default=lambda: DEFAULT_SETTINGS.copy())
 
     def save(self, **kwargs):
         if not self.pk:
             # For new users we want to set the default settings
-            user_settings = DEFAULT_SETTINGS
+            user_settings = DEFAULT_SETTINGS.copy()
             user_settings.update(self.settings)
             self.settings = user_settings
 
