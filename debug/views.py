@@ -6,7 +6,7 @@ def home(request):
 
 
 def start(request):
-    response = render(request, 'start.htlm')
+    response = render(request, 'start.html')
     request.session['started'] = True
 
     return response
