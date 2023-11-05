@@ -136,8 +136,6 @@ class DateTimeField(DateField):
         if value is None:
             return value
 
-        if value.microsecond >= 500_000:
-            value += datetime.timedelta(seconds=1)
         value = value.replace(microsecond=0)
 
         return value.astimezone()

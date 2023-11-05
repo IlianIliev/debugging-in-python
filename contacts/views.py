@@ -7,7 +7,11 @@ from contacts.utils import get_latest_hash
 
 def list(request):
     contacts = Contact.objects.filter(owner=request.user)
-    return render(request, 'contacts/list.html', {'contacts': contacts})
+    return render(request, 'contacts/list.html', {
+        'contacts': contacts,
+        'session_hash': request.session.get('latest_hash'),
+        'latest_hash': get_latest_hash(request.user),
+    })
 
 
 def create(request):
@@ -22,6 +26,6 @@ def create(request):
 
 
 def resync(request):
-    latest_hash = get_latest_hash()
+    latest_hash = get_latest_hash(request.user)
     request.session['latest_hash'] = latest_hash
     return redirect('contacts:list')

@@ -3,7 +3,7 @@ from time import mktime
 from contacts.models import Contact
 
 
-def get_latest_hash(user=None):
+def get_latest_hash(user):
     qs = Contact.objects.filter(owner=user)
     if qs.count() == 0:
         return None
